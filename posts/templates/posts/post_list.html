@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Post List Page</h1>
+    {% for object in object_list %}
+    <!--for문을 통해 object_list를 반복하고, object를 만든다. -->
+       <p> {{ object }} </p>
+        <!--object를 출력한다.-->
+    {% endfor %}
+</body>
+</html>

@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+<!--상속받는다.-->
+{% block title %}글 입력{% endblock %}
+{% block content %}
+<h1>Post 입력 화면</h1>
+<form action="{% url 'posts:post-create' %}" method="POST" enctype="multipart/form-data">{% csrf_token %}
+    <!--csrf토큰이 들어가야 데이터 생성이 가능해진다. 보안적인 부분-->
+    <!--enctype(인코딩타입)이 들어가야 이미지파일을 날릴 수 있다.이를 꼭 form-data로 해야한다.-->
+    <div>
+        <label for="id_image">이미지</label>
+        <input type="file" name="image" accept="image/*" id="id_image">
+        <!--input태그 앞에는 항상 label이 붙어야한다. 설명을 위해서.-->
+        <!--이미지 같은 경우 file 타입이다.-->
+    </div>
+    <div>
+        <label for="id_content">내용</label>
+        <textarea type="content" id="id_content" cols="30" rows="10"> </textarea>
+    </div>
+    <div>
+        <input type="submit">
+    </div>
+</form>
+{% endblock %}  
